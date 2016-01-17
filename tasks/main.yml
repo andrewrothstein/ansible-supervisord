@@ -1,0 +1,8 @@
+---
+- name: pip install...
+  when: supervisord_install_type == 'pip'
+  pip: name=supervisord state=latest
+
+- name: pkg install...
+  when: supervisord_install_type == 'pkg'
+  include: pkg.yml

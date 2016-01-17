@@ -1,0 +1,2 @@
+---
+supervisord_install_type : 'pkg'
