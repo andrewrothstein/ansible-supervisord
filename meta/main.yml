@@ -20,5 +20,7 @@ galaxy_info:
   galaxy_tags:
     - development
 
-dependencies: []
+dependencies:
+  - role: andrewrothstein.python
+    version: v1.0.2
   
