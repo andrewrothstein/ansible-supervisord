@@ -6,3 +6,23 @@
   with_items:
     - supervisor
     - supervisor-logging 
+
+- name: ensure supervisor directory exists
+  become: yes
+  become_user: root
+  with_items:
+    - /etc/supervisor/conf.d
+  file: >-
+    path={{item}}
+    mode=0755
+    state=directory
+
+- name: install supervisor config
+  become: yes
+  become_user: root
+  with_items:
+    - etc/supervisor/supervisord.conf
+  template: >-
+    src={{item}}.j2
+    dest=/{{item}}
+    mode=0644
