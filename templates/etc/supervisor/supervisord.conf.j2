@@ -3,6 +3,9 @@ nodaemon = true
 childlogdir = {{supervisord_log_dir}}
 user = {{supervisord_user}}
 
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
 [unix_http_server]
 file = {{supervisord_socket_path}}
 chmod = 700
