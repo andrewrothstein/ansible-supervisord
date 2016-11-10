@@ -12,6 +12,7 @@
   become_user: root
   with_items:
     - /etc/supervisor/conf.d
+    - /etc/supervisor/profile.d
     - '{{supervisord_log_dir}}'
   file: >-
     path={{item}}
