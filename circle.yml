@@ -7,7 +7,7 @@ dependencies:
   pre:
     - sudo -H pip install --upgrade pip
     - sudo -H pip install circleci-helpers ansible-galaxy-local-deps
-    - sudo ansible-galaxy-local-deps
+    - ansible-galaxy-local-deps-write
 
 test:
   override:
