@@ -30,7 +30,7 @@ test:
               - docker build -t $CIRCLE_PROJECT_REPONAME:$OS -f Dockerfile.$OS .
 
             after_script:
-              - docker images
+              - docker images $CIRCLE_PROJECT_REPONAME:$OS
           EHD
       :
         parallel: true
