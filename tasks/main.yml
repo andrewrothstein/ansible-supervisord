@@ -11,8 +11,8 @@
   become: yes
   become_user: root
   with_items:
-    - /etc/supervisor/conf.d
-    - /etc/supervisor/profile.d
+    - '{{supervisord_conf_dir}}'
+    - '{{supervisord_profile_dir}}'
     - '{{supervisord_log_dir}}'
   file: >-
     path={{item}}
@@ -23,8 +23,18 @@
   become: yes
   become_user: root
   with_items:
-    - etc/supervisor/supervisord.conf
+    - supervisord.conf
   template: >-
     src={{item}}.j2
-    dest=/{{item}}
+    dest={{supervisord_etc_dir}}/{{item}}
     mode=0644
+    
+- name: install supervisor boot script
+  become: yes
+  become_user: root
+  with_items:
+    - boot-supervisord.sh
+  template: >-
+    src={{item}}.j2
+    dest={{supervisord_bin_dir}}/{{item}}
+    mode=0755
