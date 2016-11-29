@@ -1,3 +1,3 @@
 ---
-supervisord_conf_dir: {{supervisord_etc_dir}}/conf.d
-supervisord_profile_dir: {{supervisor_etc_dir}}/profile.d
+supervisord_conf_dir: '{{supervisord_etc_dir}}/conf.d'
+supervisord_profile_dir: '{{supervisor_etc_dir}}/profile.d'
