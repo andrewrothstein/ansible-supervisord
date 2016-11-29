@@ -1,6 +1,5 @@
 ---
 supervisord_log_dir: /var/log/supervisor
-supervisord_bin_dir: /usr/local/bin
 supervisord_etc_dir: /etc/supervisor
 supervisord_user: root
 supervisord_socket_path: /var/run/supervisor.sock
