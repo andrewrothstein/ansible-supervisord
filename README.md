@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-supervisord.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-supervisord)
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-supervisord.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-supervisord)
 andrewrothstein.supervisord
 ===========================
 
