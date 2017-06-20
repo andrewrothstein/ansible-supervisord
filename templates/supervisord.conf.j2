@@ -12,6 +12,8 @@ chmod = 700
 chown = {{supervisord_user}}
 username = {{supervisord_user}}
 password = {SHA}{{supervisord_password|hash('sha1')}}
+stdout_logfile={{jupyter_supervisord_outlog}}
+stderr_logfile={{jupyter_supervisord_errlog}}
 
 [supervisorctl]
 serverurl = unix://{{supervisord_socket_path}}
