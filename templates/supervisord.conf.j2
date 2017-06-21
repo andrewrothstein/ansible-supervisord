@@ -14,7 +14,7 @@ username = {{supervisord_user}}
 password = {SHA}{{supervisord_password|hash('sha1')}}
 {% if supervisord_outlog is defined %}
 stdout_logfile={{supervisord_outlog}}
-(% endif %)
+{% endif %}
 {% if supervisord_outlog is defined %}
 stderr_logfile={{supervisord_errlog}}
 {% endif %}
