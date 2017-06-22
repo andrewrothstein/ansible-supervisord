@@ -12,7 +12,7 @@
   pip: name={{item}} state=present
   with_items:
     - supervisor
-    - supervisor-logging 
+    - supervisor-logging
 
 - name: ensure supervisor directory exists
   become: yes
@@ -35,7 +35,7 @@
     src={{item}}.j2
     dest={{supervisord_etc_dir}}/{{item}}
     mode=0644
-    
+
 - name: install supervisor boot script
   become: yes
   become_user: root

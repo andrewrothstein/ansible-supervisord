@@ -11,7 +11,7 @@ dependencies:
 
 test:
   override:
-    - ? | 
+    - ? |
           circle-matrix <<"EHD"
             env:
               - OS=alpine_3.3
@@ -35,7 +35,7 @@ test:
                 --write ${OS}
                 --build ${OS}
                 --push ${OS}
-                
+
           EHD
       :
         parallel: true
