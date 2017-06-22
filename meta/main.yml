@@ -29,5 +29,5 @@ galaxy_info:
     - process-supervision
 
 dependencies:
-  - role: andrewrothstein.python
+  - src: andrewrothstein.python
     version: v1.0.8
