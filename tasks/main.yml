@@ -1,7 +1,7 @@
 ---
 - name: resolve platform specific vars
   include_vars: '{{item}}'
-  with_first_found:
+n  with_first_found:
     - files:
         - '{{ansible_distribution}}-{{ansible_distribution_release}}.yml'
         - '{{ansible_distribution}}.yml'
@@ -44,5 +44,5 @@
       m: '0755'
   template:
     src: '{{itemf}}.j2'
-    dest: '{{item.d}}/{{item}.f}'
+    dest: '{{item.d}}/{{item.f}}'
     mode: '{{item.m}}'
