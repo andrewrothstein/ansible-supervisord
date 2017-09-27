@@ -2,3 +2,15 @@
 - hosts: all
   roles:
     - role: '{{playbook_dir}}'
+      supervisord_addl_settings:
+        logfile: /tmp/supervisord-test.log
+
+  tasks:
+    - name: check if additional settings are configured correctly in supervisord.conf
+      lineinfile:
+        path: '{{supervisord_etc_dir}}/supervisord.conf'
+        line: logfile=/tmp/supervisord-test.log
+        state: present
+      check_mode: yes
+      register: result
+      failed_when: (result | changed) or (result | failed)
