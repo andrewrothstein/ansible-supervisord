@@ -2,6 +2,9 @@
 nodaemon = true
 childlogdir = {{supervisord_log_dir}}
 user = {{supervisord_user}}
+{% for k,v in supervisord_addl_settings.iteritems() %}
+{{k}}={{v}}
+{% endfor %}
 
 [rpcinterface:supervisor]
 supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
@@ -11,7 +14,7 @@ file = {{supervisord_socket_path}}
 chmod = 700
 chown = {{supervisord_user}}
 username = {{supervisord_user}}
-password = {SHA}{{supervisord_password|hash('sha1')}}
+password = {SHA}{{supervisord_password|default(ansible_date_time.epoch | to_uuid )|hash('sha1')}}
 
 [supervisorctl]
 serverurl = unix://{{supervisord_socket_path}}
