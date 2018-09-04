@@ -2,7 +2,7 @@
 nodaemon = true
 childlogdir = {{supervisord_log_dir}}
 user = {{supervisord_user}}
-{% for k,v in supervisord_addl_settings.iteritems() %}
+{% for k,v in supervisord_addl_settings.items()|default({}) %}
 {{k}}={{v}}
 {% endfor %}
 

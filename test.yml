@@ -4,7 +4,6 @@
     - role: '{{playbook_dir}}'
       supervisord_addl_settings:
         logfile: /tmp/supervisord-test.log
-
   tasks:
     - name: check if additional settings are configured correctly in supervisord.conf
       lineinfile:
@@ -13,4 +12,4 @@
         state: present
       check_mode: yes
       register: result
-      failed_when: (result | changed) or (result | failed)
+      failed_when: (result is changed) or (result is failed)
