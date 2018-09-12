@@ -16,9 +16,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-    - name: Alpine
-      versions:
-        - all
     - name: Debian
       versions:
         - jessie
@@ -26,8 +23,9 @@ galaxy_info:
   galaxy_tags:
     - python
     - supervisord
-    - process-supervision
 
 dependencies:
-  - src: andrewrothstein.python
-    version: v1.0.12
+  - src: andrewrothstein.miniconda
+    version: v5.2.1
+  - src: andrewrothstein.conda-env
+    version: v2.0.4

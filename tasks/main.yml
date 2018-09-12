@@ -1,25 +1,4 @@
 ---
-- name: resolve platform specific vars
-  include_vars: '{{item}}'
-  with_first_found:
-    - files:
-        - '{{ansible_distribution}}-{{ansible_distribution_release}}.yml'
-        - '{{ansible_distribution}}.yml'
-        - '{{ansible_os_family}}.yml'
-      skip: true
-      paths:
-        - '{{role_path}}/vars'
-
-- name: pip install...
-  become: yes
-  become_user: root
-  with_items:
-    - supervisor
-    - supervisor-logging
-  pip:
-    name: '{{item}}'
-    state: present
-
 - name: ensure supervisor directory exists
   become: yes
   become_user: root
