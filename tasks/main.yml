@@ -3,11 +3,11 @@
   become: yes
   become_user: root
   with_items:
-    - '{{supervisord_conf_dir}}'
-    - '{{supervisord_profile_dir}}'
-    - '{{supervisord_log_dir}}'
+    - '{{ supervisord_conf_dir }}'
+    - '{{ supervisord_profile_dir }}'
+    - '{{ supervisord_log_dir }}'
   file:
-    path: '{{item}}'
+    path: '{{ item }}'
     mode: 0755
     state: directory
 
@@ -16,12 +16,12 @@
   become_user: root
   with_items:
     - f: supervisord.conf
-      d: '{{supervisord_etc_dir}}'
+      d: '{{ supervisord_etc_dir }}'
       m: '0644'
     - f: boot-supervisord.sh
       d: /usr/local/bin
       m: '0755'
   template:
-    src: '{{item.f}}.j2'
-    dest: '{{item.d}}/{{item.f}}'
-    mode: '{{item.m}}'
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: '{{ item.m }}'
