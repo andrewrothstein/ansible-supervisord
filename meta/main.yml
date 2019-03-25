@@ -28,4 +28,4 @@ dependencies:
   - src: andrewrothstein.miniconda
     version: v5.2.3
   - src: andrewrothstein.conda-env
-    version: v2.0.4
+    version: v2.0.5
