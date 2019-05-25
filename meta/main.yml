@@ -1,31 +1,28 @@
----
+dependencies:
+- role: andrewrothstein.miniconda
+  version: v5.2.3
+- role: andrewrothstein.conda-env
+  version: v2.0.7
 galaxy_info:
   author: Andrew Rothstein
-  description: supervisord role
   company: BlackRock
+  description: supervisord role
+  galaxy_tags:
+  - python
+  - supervisord
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.0
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
-    - name: Debian
-      versions:
-        - jessie
-
-  galaxy_tags:
-    - python
-    - supervisord
-
-dependencies:
-  - src: andrewrothstein.miniconda
-    version: v5.2.3
-  - src: andrewrothstein.conda-env
-    version: v2.0.5
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - jessie
