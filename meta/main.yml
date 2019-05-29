@@ -1,6 +1,6 @@
 dependencies:
 - role: andrewrothstein.miniconda
-  version: v5.2.5
+  version: v5.2.6
 - role: andrewrothstein.conda-env
   version: v2.0.7
 galaxy_info:
