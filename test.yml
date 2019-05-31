@@ -2,6 +2,7 @@
 - hosts: all
   roles:
     - role: '{{playbook_dir}}'
+    - role: '{{playbook_dir}}'
       supervisord_addl_settings:
         logfile: /tmp/supervisord-test.log
   tasks:
