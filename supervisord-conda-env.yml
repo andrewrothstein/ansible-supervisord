@@ -1,6 +1,5 @@
 ---
 dependencies:
-  - python=2.7
-  - supervisor
-  - pip:
-      - supervisor-logging
+  - python={{ supervisord_python_ver }}
+  - supervisor={{ supervisord_ver }}
+

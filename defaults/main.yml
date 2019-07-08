@@ -3,6 +3,8 @@ conda_env_name: ansible-supervisord
 conda_env_environment: supervisord-conda-env.yml
 conda_env_activate_for_login_shell: True
 
+supervisord_python_ver: '3.7'
+supervisord_ver: '4.0.3'
 supervisord_log_dir: /var/log/supervisor
 supervisord_etc_dir: /etc/supervisor
 supervisord_user: root
