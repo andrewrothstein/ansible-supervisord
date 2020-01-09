@@ -1,8 +1,8 @@
 dependencies:
 - role: andrewrothstein.miniconda
-  version: v5.2.9
+  version: v5.2.11
 - role: andrewrothstein.conda-env
-  version: v2.0.9
+  version: v2.0.10
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
