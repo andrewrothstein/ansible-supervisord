@@ -9,6 +9,7 @@ user = {{supervisord_user}}
 [rpcinterface:supervisor]
 supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 
+{% if supervisord_enable_supervisorctl | bool %}
 [unix_http_server]
 file = {{ supervisord_socket_path }}
 chmod = 700
@@ -18,6 +19,7 @@ password = {SHA}{{ supervisord_password | default(ansible_date_time.epoch | to_u
 
 [supervisorctl]
 serverurl = unix://{{ supervisord_socket_path }}
+{% endif %}
 
 [include]
 files = {{ supervisord_conf_dir}}/*.conf
