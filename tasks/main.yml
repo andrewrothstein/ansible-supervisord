@@ -1,4 +1,6 @@
 ---
+- include_role:
+    name: andrewrothstein.python
 - name: create venv in {{ supervisord_venv_dir }}
   become: true
   become_user: root
