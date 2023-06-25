@@ -1,6 +1,18 @@
 ---
+- name: create venv in {{ supervisord_venv_dir }}
+  become: true
+  become_user: root
+  command: python3 -m venv {{ supervisord_venv_dir | quote }}
+  args:
+    creates: '{{ supervisord_venv_dir }}/bin/activate'
+- name: installing supervisord:{{ supervisord_ver }}
+  become: true
+  become_user: root
+  pip:
+    name: supervisor=={{ supervisord_ver }}
+    virtualenv: '{{ supervisord_venv_dir }}'
 - name: ensure supervisor directory exists
-  become: yes
+  become: true
   become_user: root
   with_items:
     - '{{ supervisord_conf_dir }}'
@@ -12,7 +24,7 @@
     state: directory
 
 - name: install supervisor config and boot script
-  become: yes
+  become: true
   become_user: root
   with_items:
     - f: supervisord.conf

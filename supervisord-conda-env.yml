@@ -1,5 +1,0 @@
----
-dependencies:
-  - python={{ supervisord_python_ver }}
-  - supervisor={{ supervisord_ver }}
-

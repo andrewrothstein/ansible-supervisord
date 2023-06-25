@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
-for i in $(ls {{supervisord_profile_dir}}/*.sh 2>/dev/null | sort) ; do
-    if [ -r "$i" ]; then
-	. $i
+for i in $(ls {{ supervisord_profile_dir }}/*.sh 2>/dev/null | sort);
+do
+    if [ -r "$i" ];
+    then
+	  . $i
     fi
 done
 
-{{supervisord_bin_dir}}/supervisord -c /etc/supervisor/supervisord.conf
+. {{ supervisord_venv_dir }}/bin/activate
+supervisord -c /etc/supervisor/supervisord.conf

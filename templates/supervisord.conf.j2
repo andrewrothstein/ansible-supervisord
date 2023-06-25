@@ -1,7 +1,7 @@
 [supervisord]
 nodaemon = true
-childlogdir = {{supervisord_log_dir}}
-user = {{supervisord_user}}
+childlogdir = {{ supervisord_log_dir }}
+user = {{ supervisord_user }}
 {% for k,v in supervisord_addl_settings | default({}) | dictsort %}
 {{ k }}={{ v }}
 {% endfor %}
@@ -22,4 +22,4 @@ serverurl = unix://{{ supervisord_socket_path }}
 {% endif %}
 
 [include]
-files = {{ supervisord_conf_dir}}/*.conf
+files = {{ supervisord_conf_dir }}/*.conf
