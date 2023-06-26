@@ -1,6 +1,6 @@
 andrewrothstein.supervisord
 ===========================
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-supervisord.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-supervisord)
+![Build Status](https://github.com/andrewrothstein/ansible-supervisord/actions/workflows/build.yml/badge.svg)
 
 A role for installing [supervisor](http://supervisord.org/) with pip
 

@@ -1,8 +1,4 @@
-dependencies:
-- role: andrewrothstein.miniconda
-  version: v6.1.0
-- role: andrewrothstein.conda-env
-  version: v2.1.4
+---
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
@@ -17,23 +13,18 @@ galaxy_info:
   - name: Alpine
     versions:
       - all
-  - name: Archlinux
-    versions:
-      - all
   - name: Debian
     versions:
-    - buster
-    - stretch
+    - bookworm
+    - bullseye
   - name: EL
     versions:
-    - 7
     - 8
   - name: Fedora
     versions:
-    - 31
-    - 32
+    - 37
+    - 38
   - name: Ubuntu
     versions:
-    - bionic
     - focal
-    - xenial
+    - jammy
