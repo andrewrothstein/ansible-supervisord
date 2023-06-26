@@ -1,12 +1,6 @@
 ---
 - include_role:
     name: andrewrothstein.python
-- name: create venv in {{ supervisord_venv_dir }}
-  become: true
-  become_user: root
-  command: python3 -m venv {{ supervisord_venv_dir | quote }}
-  args:
-    creates: '{{ supervisord_venv_dir }}/bin/activate'
 - name: installing supervisord:{{ supervisord_ver }}
   become: true
   become_user: root
