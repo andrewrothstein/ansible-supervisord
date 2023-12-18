@@ -1,35 +1,35 @@
 ---
-- include_role:
+- ansible.builtin.include_role:
     name: andrewrothstein.python
-- name: installing supervisord:{{ supervisord_ver }}
+- name: Installing supervisord:{{ supervisord_ver }}
   become: true
   become_user: root
-  pip:
+  ansible.builtin.pip:
     name: supervisor=={{ supervisord_ver }}
     virtualenv: '{{ supervisord_venv_dir }}'
-- name: ensure supervisor directory exists
+- name: Ensure supervisor directory exists
   become: true
   become_user: root
   with_items:
     - '{{ supervisord_conf_dir }}'
     - '{{ supervisord_profile_dir }}'
     - '{{ supervisord_log_dir }}'
-  file:
+  ansible.builtin.file:
     path: '{{ item }}'
-    mode: 0755
+    mode: '755'
     state: directory
 
-- name: install supervisor config and boot script
+- name: Install supervisor config and boot script
   become: true
   become_user: root
   with_items:
     - f: supervisord.conf
       d: '{{ supervisord_etc_dir }}'
-      m: '0644'
+      m: '644'
     - f: boot-supervisord.sh
       d: /usr/local/bin
-      m: '0755'
-  template:
+      m: '755'
+  ansible.builtin.template:
     src: '{{ item.f }}.j2'
     dest: '{{ item.d }}/{{ item.f }}'
     mode: '{{ item.m }}'
