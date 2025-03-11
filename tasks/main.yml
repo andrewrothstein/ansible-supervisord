@@ -1,5 +1,6 @@
 ---
-- ansible.builtin.include_role:
+- name: Installing andrewrothstein.python
+  ansible.builtin.include_role:
     name: andrewrothstein.python
 - name: Installing supervisord:{{ supervisord_ver }}
   become: true
